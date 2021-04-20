@@ -39,7 +39,7 @@ public class Lesson2 {
        }
 
     public static boolean leapYear(int a) {
-            if (a % 4 == 0) {
+            if (a % 4 == 0 && a%100 != 0 || a%400 == 0) {
                 System.out.println("true");
                 return true;
             } else {
