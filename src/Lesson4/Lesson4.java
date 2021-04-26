@@ -77,28 +77,34 @@ public class Lesson4 {
         map[x][y] = DOT_O;
     }
             private static boolean isWin(char symb) {
-                if (map[0][0] == symb && map[0][1] == symb && map[0][2] == symb) return true;
-                if (map[1][0] == symb && map[1][1] == symb && map[1][2] == symb) return true;
-                if (map[2][0] == symb && map[2][1] == symb && map[2][2] == symb) return true;
+                for (int i = 0; i < SIZE; i++) {
+  //                  for (int j = 0; j < SIZE; j++) {
+                        if ((map[i][0] == symb && map[i][1] == symb && map[i][2] == symb) ||
+                    (map[0][i] == symb && map[1][i] == symb && map[2][i] == symb)){
+                            return true;
+                        }
+                        if ((map[0][0] == symb && map[1][1] == symb && map[2][2] == symb) ||
+                                (map[2][0] == symb && map[1][1] == symb && map[0][2] == symb)) {
+                            return true;
+                        }
+                      }
 
-                if (map[0][0] == symb && map[1][0] == symb && map[2][0] == symb) return true;
-                if (map[0][1] == symb && map[1][1] == symb && map[2][1] == symb) return true;
-                if (map[0][2] == symb && map[1][2] == symb && map[2][2] == symb) return true;
-
-                if (map[0][0] == symb && map[1][1] == symb && map[2][2] == symb) return true;
-                if (map[2][0] == symb && map[1][1] == symb && map[0][2] == symb) return true;
                 return false;
-            }
- /*       for (int i = 1; i < SIZE; i++) {
-            for (int j = 1; j < SIZE; j++) {
-                if (map[i][j] == symbol) {
-                    return true;
-                }
-            }
-        }
-        return false;
+ //               if (map[0][0] == symb && map[0][1] == symb && map[0][2] == symb) return true;
+ //               if (map[1][0] == symb && map[1][1] == symb && map[1][2] == symb) return true;
+ //               if (map[2][0] == symb && map[2][1] == symb && map[2][2] == symb) return true;
+
+ //               if (map[0][0] == symb && map[1][0] == symb && map[2][0] == symb) return true;
+ //               if (map[0][1] == symb && map[1][1] == symb && map[2][1] == symb) return true;
+ //               if (map[0][2] == symb && map[1][2] == symb && map[2][2] == symb) return true;
+
+ //               if (map[0][0] == symb && map[1][1] == symb && map[2][2] == symb) return true;
+ //               if (map[2][0] == symb && map[1][1] == symb && map[0][2] == symb) return true;
+ //               return false;
+  //          }
+
     }
-  */      public static boolean isMapFull() {
+        public static boolean isMapFull() {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0;j < SIZE; j++) {
                 if (map[i][j] == DOT_EMPTY) {
@@ -131,7 +137,6 @@ public class Lesson4 {
         for (int i = 0; i < map.length; i++) {
             System.out.print(i + 1 + "  ");
             for (int j = 0; j < map.length; j++) {
-                map[i][j] = DOT_EMPTY;
                 System.out.print(map[i][j] + "  ");
             }
             System.out.println();
