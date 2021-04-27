@@ -78,7 +78,6 @@ public class Lesson4 {
     }
             private static boolean isWin(char symb) {
                 for (int i = 0; i < SIZE; i++) {
-  //                  for (int j = 0; j < SIZE; j++) {
                         if ((map[i][0] == symb && map[i][1] == symb && map[i][2] == symb) ||
                     (map[0][i] == symb && map[1][i] == symb && map[2][i] == symb)){
                             return true;
@@ -142,4 +141,19 @@ public class Lesson4 {
             System.out.println();
         }
     }
-}
+  /*  public static void winSituation(char symb) {
+        map[i][j] = DOT_EMPTY;
+        for (int i = 0; i < SIZE; i++) {
+            if ((map[i][0] == symb && map[i][1] == symb || map[i][0] == symb && map[i][2] == symb || map[i][1] == symb &&  map[i][2] == symb) ||
+                    (map[0][i] == symb && map[1][i] == symb || map[0][i] == symb && map[2][i] == symb || map[1][i] == symb &&  map[2][i] == symb)){
+                map[i][j]
+ //               return true;
+            }
+            if ((map[0][0] == symb && map[1][1] == symb && map[2][2] == symb) ||
+                    (map[2][0] == symb && map[1][1] == symb && map[0][2] == symb)) {
+ //               return true;
+            }
+            }
+ //       return false;
+ */   }
+//}
