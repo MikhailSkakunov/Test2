@@ -3,16 +3,20 @@ package Lesson6;
 import java.util.Random;
 
 public class Cat extends Animal {
-
-    public Cat (String name, String color, int age, int distanceRun, int distanceSwim) {
-        super(name, color, age, distanceRun, distanceSwim);
+    static int countCat;
+    public Cat(String name, String color, int age, int distanceRun, int distanceSwim) {
+        super(name, color, age, distanceRun, distanceSwim, countAnimal);
+        countCat++;
     }
     public void printRun(Random random) {
         int catRunDistance = random.nextInt(200);
             System.out.println("Кот пробежал " + catRunDistance + " метрa(ов)!");
         }
     public void printSwim() {
-        System.out.println("Кот утонул!!!");
+        System.out.println("Кот не умел плавать и утонул!!!");
+    }
+    public static int getCountCat() {
+        return countCat;
     }
 
     @Override
@@ -23,10 +27,5 @@ public class Cat extends Animal {
                 ", age=" + age +
                 '}';
     }
-
-
- //   public int getCountAnimal() {
- //       return Animal.getCountAnimal();
-    }
-//}
+}
 

@@ -2,6 +2,16 @@ package Lesson6;
 import java.util.Random;
 public class Dog extends Animal {
     private final String type;
+    static int countDog;
+
+    public Dog(String name, String color, String type, int age, int distanceRun, int distanceSwim) {
+        super(name, color, age, distanceRun, distanceSwim, countAnimal);
+        this.type = type;
+        countDog++;
+    }
+    public static int getCountDog() {
+        return countDog;
+    }
 
     public void printRun(Random random) {
         int dogRunDistance = random.nextInt(500);
@@ -9,13 +19,10 @@ public class Dog extends Animal {
     }
     public void printSwim(Random random) {
         int dogSwimDistance = random.nextInt(10);
-        System.out.println("Собака проплыла " + dogSwimDistance + " метра(ов)!");
+        System.out.println("И проплыла " + dogSwimDistance + " метра(ов)!");
     }
 
-    public Dog(String name, String color, String type, int age, int distanceRun, int distanceSwim) {
-        super(name, color, age, distanceRun, distanceSwim);
-        this.type = type;
-    }
+
     public String getType() {
         return type;
     }

@@ -9,10 +9,11 @@ public class Animal {
         int age;
         int distanceRun;
         int distanceSwim;
-        final int CAT_RUN_DISTANCE = 200;
-        final int DOG_RUN_DISTANCE = 500;
-        final int DOG_SWIM_DISTANCE = 10;
-        static int countAnimal = 0;
+        final int сatRunDistance = 200;
+        final int dogRunDistance = 500;
+        final int dogSwimDistance = 10;
+        static int  countAnimal;
+
 
 
         public String getName () {
@@ -51,20 +52,18 @@ public class Animal {
             return distanceSwim;
         }
 
-        public void setDistanceSwim ( int distanceSwim){
+        public void setDistanceSwim (int distanceSwim){
             this.distanceSwim = distanceSwim;
         }
 
-        public static int getCountAnimal () {
-            return countAnimal++;
-        }
-
-    public Animal(String name, String color, int age, int distanceRun, int distanceSwim){
+    public Animal(String name, String color, int age, int distanceRun, int distanceSwim, int countAnimal){
             this.name = name;
             this.color = color;
             this.age = age;
             this.distanceRun = distanceRun;
             this.distanceSwim = distanceSwim;
+            countAnimal++;
+
         }
 
         @Override
@@ -86,18 +85,25 @@ public class Animal {
             System.out.println("Животное поплыло!");
         }
 
+        public static int counter() {
+            return countAnimal++;
+        }
+
     public static void main(String[] args) {
         Cat cat = new Cat("Маркиз", "Серый в полоску", 3, 200, 0);
+        System.out.println("Мы завели " + cat.getCountCat() + " кота(ов)!");
         cat.printInfo();
         cat.printRun(cat.random);
         cat.printSwim();
         System.out.println();
+
         Dog dog = new Dog("Бруно", "Каштановый", "Такса" ,5, 500, 10);
-        dog.printInfo();
+        System.out.println("Мы завели " + dog.getCountDog() + " собак(у)!");
         System.out.println(dog.getType());
+        dog.printInfo();
         dog.printRun(dog.random);
         dog.printSwim(dog.random);
-        System.out.println(getCountAnimal());
-    }
 
+
+    }
 }
