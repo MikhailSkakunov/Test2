@@ -4,11 +4,11 @@ import java.util.Random;
 
 public class Animal {
         final Random random = new Random();
-        String name;
-        String color;
-        int age;
-        int distanceRun;
-        int distanceSwim;
+        protected String name;
+        protected String color;
+        protected int age;
+        protected int distanceRun;
+        protected int distanceSwim;
         static int  countAnimal;
 
         public String getName() {
@@ -100,7 +100,6 @@ public class Animal {
         dog.printSwim(dog.random);
         System.out.println();
         System.out.println("Всего у нас дома " + counter() + " животных.");
-
 
 
     }
