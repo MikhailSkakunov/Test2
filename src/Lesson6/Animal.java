@@ -9,54 +9,49 @@ public class Animal {
         int age;
         int distanceRun;
         int distanceSwim;
-        final int сatRunDistance = 200;
-        final int dogRunDistance = 500;
-        final int dogSwimDistance = 10;
         static int  countAnimal;
 
-
-
-        public String getName () {
+        public String getName() {
             return name;
         }
 
-        public void setName (String name){
+        public void setName(String name){
             this.name = name;
         }
 
-        public String getColor () {
+        public String getColor() {
             return color;
         }
 
-        public void setColor (String color){
+        public void setColor(String color){
             this.color = color;
         }
 
-        public int getAge () {
+        public int getAge() {
             return age;
         }
 
-        public void setAge ( int age){
+        public void setAge(int age){
             this.age = age;
         }
 
-        public int getDistanceRun () {
+        public int getDistanceRun() {
             return distanceRun;
         }
 
-        public void setDistanceRun (int distanceRun){
+        public void setDistanceRun(int distanceRun){
             this.distanceRun = distanceRun;
         }
 
-        public int getDistanceSwim () {
+        public int getDistanceSwim() {
             return distanceSwim;
         }
 
-        public void setDistanceSwim (int distanceSwim){
+        public void setDistanceSwim(int distanceSwim){
             this.distanceSwim = distanceSwim;
         }
 
-    public Animal(String name, String color, int age, int distanceRun, int distanceSwim){
+    public Animal(String name, String color, int age, int distanceRun, int distanceSwim) {
             this.name = name;
             this.color = color;
             this.age = age;
@@ -67,7 +62,7 @@ public class Animal {
         }
 
         @Override
-        public String toString () {
+        public String toString() {
             return "Animal{" +
                     "name='" + name + '\'' +
                     ", color='" + color + '\'' +
@@ -77,7 +72,7 @@ public class Animal {
         public void printInfo () {
             System.out.println(toString());
         }
-        public void printRun (Animal animal){
+        public void printRun (){
             System.out.println("Животное побежало!");
         }
 
@@ -105,6 +100,8 @@ public class Animal {
         dog.printSwim(dog.random);
         System.out.println();
         System.out.println("Всего у нас дома " + counter() + " животных.");
+
+
 
     }
 }

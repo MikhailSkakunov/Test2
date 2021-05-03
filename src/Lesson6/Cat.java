@@ -9,7 +9,7 @@ public class Cat extends Animal {
         countCat++;
     }
     public void printRun(Random random) {
-        int catRunDistance = random.nextInt(200);
+            int catRunDistance = random.nextInt(200);
             System.out.println("Кот пробежал " + catRunDistance + " метрa(ов)!");
         }
     public void printSwim() {
