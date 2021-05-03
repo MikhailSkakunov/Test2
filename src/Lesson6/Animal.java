@@ -44,7 +44,7 @@ public class Animal {
             return distanceRun;
         }
 
-        public void setDistanceRun ( int distanceRun){
+        public void setDistanceRun (int distanceRun){
             this.distanceRun = distanceRun;
         }
 
@@ -56,7 +56,7 @@ public class Animal {
             this.distanceSwim = distanceSwim;
         }
 
-    public Animal(String name, String color, int age, int distanceRun, int distanceSwim, int countAnimal){
+    public Animal(String name, String color, int age, int distanceRun, int distanceSwim){
             this.name = name;
             this.color = color;
             this.age = age;
@@ -103,7 +103,8 @@ public class Animal {
         dog.printInfo();
         dog.printRun(dog.random);
         dog.printSwim(dog.random);
-
+        System.out.println();
+        System.out.println("Всего у нас дома " + counter() + " животных.");
 
     }
 }

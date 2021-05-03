@@ -5,7 +5,7 @@ public class Dog extends Animal {
     static int countDog;
 
     public Dog(String name, String color, String type, int age, int distanceRun, int distanceSwim) {
-        super(name, color, age, distanceRun, distanceSwim, countAnimal);
+        super(name, color, age, distanceRun, distanceSwim);
         this.type = type;
         countDog++;
     }
