@@ -6,10 +6,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Counter extends JFrame {
-        static int count;
+        private int count;
+        private static int step;
 
         public Counter(int initialCount) {
-        setTitle("Counter");
+            count = initialCount;
+            setTitle("Counter");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(800,300,400,120);
         setAlwaysOnTop(true);
@@ -31,40 +33,36 @@ public class Counter extends JFrame {
             add(textField, BorderLayout.AFTER_LAST_LINE);
             textField.addActionListener(new ActionListener() {
                 @Override
-                public void actionPerformed(ActionEvent e) {
+                public void actionPerformed(ActionEvent a) {
                     System.out.println("Вы ввели число " + textField.getText());
+
+                try {
+                  step = Integer.parseInt(textField.getText());
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
+                    System.out.println("Введите число!");
+                }
                 }
             });
-            try {
-                initialCount = Integer.parseInt(textField.getText());
-
-            } catch (NumberFormatException e) {
-                e.printStackTrace();
-                System.out.println("Введите число!");
-            }
-            count = initialCount;
 
         decrementCount.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                count--;
+                count -= step;
                 jLabel.setText(String.valueOf(count));
             }
         });
         incrementCount.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                count++;
+                count += step;
                 jLabel.setText(String.valueOf(count));
             }
         });
-
-
-
-        setVisible(true);
+       setVisible(true);
         }
 
     public static void main(String[] args) {
-        new Counter(count);
+        new Counter(0);
     }
 }
